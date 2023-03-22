@@ -1,0 +1,98 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Nguyen Khac Chang",
+      "birthDate": "2002-05-23T17:00:00.000Z",
+      "class": 5
+    },
+    {
+      "id": 2,
+      "name": "Tran Cong Dai",
+      "birthDate": "2000-07-03T17:00:00.000Z",
+      "class": 7
+    },
+    {
+      "id": 3,
+      "name": "Le Anh Tuan",
+      "birthDate": "2002-12-03T17:00:00.000Z",
+      "class": 4
+    },
+    {
+      "id": 4,
+      "name": "Bui Minh Duc",
+      "birthDate": "2001-04-03T17:00:00.000Z",
+      "class": 4
+    },
+    {
+      "id": 5,
+      "name": "Nguyen Duy Viet",
+      "birthDate": "2000-10-03T17:00:00.000Z",
+      "class": 6
+    },
+    {
+      "id": 9,
+      "name": "Hoang Nhat Tan",
+      "birthDate": "2001-12-03T17:00:00.000Z",
+      "class": 5
+    },
+    {
+      "id": 6,
+      "name": "Nguyen Viet Tien",
+      "birthDate": "2002-12-03T17:00:00.000Z",
+      "class": 4
+    },
+    {
+      "id": 7,
+      "name": "Tran Duy Chinh",
+      "birthDate": "2002-09-03T17:00:00.000Z",
+      "class": 7
+    },
+    {
+      "id": 8,
+      "name": "Cao Quang Thang",
+      "birthDate": "2003-02-03T17:00:00.000Z",
+      "class": 5
+    }
+  ],
+
+  "class": [
+    {
+      "id": 1,
+      "className": "Lớp 10"
+    },
+    {
+      "id": 2,
+      "className": "Lớp 11"
+    },
+    {
+      "id": 3,
+      "className": "Lớp 12"
+    },
+    {
+      "id": 4,
+      "className": "Lớp 11A1",
+      "parent": 3
+    },
+    {
+      "id": 5,
+      "className": "Lớp 12A3",
+      "parent": 3
+    },
+    {
+      "id": 6,
+      "className": "Lớp 10A6",
+      "parent": 3
+    },
+    {
+      "id": 7,
+      "className": "Lớp 11A2",
+      "parent": 3
+    },
+    {
+      "id": 4,
+      "className": "Lớp 12A8",
+      "parent": 3
+    }
+  ]
+}

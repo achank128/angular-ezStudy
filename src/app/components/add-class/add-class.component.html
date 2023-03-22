@@ -1,0 +1,47 @@
+<form
+  [formGroup]="classForm"
+  novalidate
+  class="add-form"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>{{ title }}</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      formControlName="className"
+      minlength="4"
+      maxlength="100"
+      required
+    />
+    <mat-error *ngIf="classForm.controls['className'].errors?.['required']">
+      Class Name is required
+    </mat-error>
+    <mat-error
+      *ngIf="classForm.controls['className'].errors?.['minlength'] || classForm.controls['className'].errors?.['maxlength']"
+    >
+      Class Name must be bettween 4 and 100 character.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Parent</mat-label>
+    <mat-select formControlName="parent">
+      <mat-option *ngFor="let c of getAllClass()" value="{{ c.id }}">{{
+        c.className
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [ngStyle]="{ 'margin-right': '10px' }"
+    >
+      Save
+    </button>
+    <a mat-raised-button routerLink="/class">Cancel</a>
+  </div>
+</form>

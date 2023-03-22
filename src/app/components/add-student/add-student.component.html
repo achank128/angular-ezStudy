@@ -1,0 +1,65 @@
+<form
+  [formGroup]="studentForm"
+  novalidate
+  class="add-form"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>{{ title }}</h2>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      formControlName="name"
+      minlength="4"
+      maxlength="150"
+      required
+    />
+    <mat-error *ngIf="studentForm.controls['name'].errors?.['required']">
+      Name is required
+    </mat-error>
+    <mat-error
+      *ngIf="studentForm.controls['name'].errors?.['minlength'] || studentForm.controls['name'].errors?.['maxlength']"
+    >
+      Name must be bettween 4 and 150 character.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Birth Date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      formControlName="birthDate"
+      required
+    />
+    <mat-hint>DD/MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker
+      #picker
+      startView="year"
+      [startAt]="startDate"
+    ></mat-datepicker>
+    <mat-error>Birth Date is required.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Class</mat-label>
+    <mat-select formControlName="class" required>
+      <mat-option *ngFor="let c of getAllClass()" value="{{ c.id }}">{{
+        c.className
+      }}</mat-option>
+    </mat-select>
+    <mat-error>Class is required.</mat-error>
+  </mat-form-field>
+  <div>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [ngStyle]="{ 'margin-right': '10px' }"
+    >
+      Save
+    </button>
+    <a mat-raised-button routerLink="/">Cancel</a>
+  </div>
+</form>

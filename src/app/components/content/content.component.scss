@@ -1,0 +1,11 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-container {
+  width: 500px;
+  .search-input {
+    width: 100%;
+  }
+}
